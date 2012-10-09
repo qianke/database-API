@@ -6,16 +6,18 @@ web sql database API
 
 ==================
 *Example：*
+	
+	初始化:
 	var webSql = new webStorage('table1'); // 开启table1库
 	webSq.debug = true // 开启调试
 	
 	常用方法:
-	webSql.createTable('ddd')
-	webSql.dropTable('ddd')
-	webSql.insert('stu2',{id:'1',name:'123456'})
-	webSql.del('stu2',{name:'123456'},function(data){console.log(data)})
-	webSql.update('stu2',{name:'ddd'},{id:'ddd',name:'fdfd'})
-	webSql.query('stu2',{id:'ddd'},function(data){console.log(data.item(0))})
+	webSql.createTable('ddd') //创建表
+	webSql.dropTable('ddd') //删除表
+	webSql.insert('stu2',{id:'1',name:'123456'}) //插入数据
+	webSql.del('stu2',{name:'123456'},function(data){console.log(data)}) // 删除数据
+	webSql.update('stu2',{name:'ddd'},{id:'ddd',name:'fdfd'}) //更新数据
+	webSql.query('stu2',{id:'ddd'},function(data){console.log(data.item(0))}) //查询
 	
 	用户自定义方法:
 	webSql.execute('create table if not exists stu2 (id REAL UNIQUE, name TEXT)');
